@@ -17,6 +17,9 @@ app.use(express.json());
 
 app.use(cors());
 
+let name = "Kavinda";
+let age = 21;
+
 
 
 
