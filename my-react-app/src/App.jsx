@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Route, Routes } from 'react-router-dom';
+import Food from './pages/Food';
+
+
 
 function App(){
   return(
     <div>
-      <h1>Kavinda</h1>
+      <Routes>
+        <Route path="/food" element={<Food />} />
+      </Routes>
     </div>
   );
 }

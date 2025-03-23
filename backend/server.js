@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const testRoute = require('./routes/testRoute');
 //const mongoose = require('mongoose');
 
 // Load env variables
@@ -17,21 +18,31 @@ app.use(express.json());
 
 app.use(cors());
 
-let name = "Kavinda";
-let age = 21;
+app.use('/api',testRoute);
 
 
 
 
 // Test route
 app.get("/",(req,res)=>{
-    res.send("Welcome to the server");
+    res.send("d");
 });
+
+/*
+router.get("/food",protect,async (req,res)=>{
+    try{
+        const foods = await Food.find();
+        res.status(200).json(foods);
+    }catch(err){
+        res.status(500).json({ message:'Error getting food items'});
+    }
+});
+*/
 
 
 
 // start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
